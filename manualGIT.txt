@@ -1,5 +1,5 @@
 Pujar fitxers:
-	git add *
+	git add <nomfitxer>
 	git commit -m "asunto"
 	git push
 
@@ -7,6 +7,10 @@ Pujar fitxers:
 
 Baixar ultima versio:
 	git pull
+
+Per resoldre merge:
+	(quan hi ha conflictes)
+	obrir fitxer amb editor i seleccionar el que convingui
 
 check version:
 	git fetch
