@@ -1,5 +1,4 @@
 Pujar fitxers:
-	git add *
 	git commit -m "asunto"
 	git push
 
