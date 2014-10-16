@@ -1,4 +1,3 @@
-Minesweeper
-===========
+Bros++ Minesweepper
 
-Project Minesweeper for AS practise
+Assignatura: Arquitectura del Software - FIB
