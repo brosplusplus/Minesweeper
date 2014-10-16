@@ -1,0 +1,12 @@
+Pujar fitxers:
+	git commit -m "asunto"
+	git push
+
+	comprovar que es l'ultima versió amb "check version"
+
+Baixar ultima versio:
+	git pull
+
+check version:
+	git fetch
+	git status
