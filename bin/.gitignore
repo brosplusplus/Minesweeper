@@ -1,1 +1,5 @@
-/presentation/
+/domain/
+/adapters/
+/factories/
+/bros/
+/com/
