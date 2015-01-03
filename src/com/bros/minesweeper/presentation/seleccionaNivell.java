@@ -1,4 +1,4 @@
-package presentation;
+package com.bros.minesweeper.presentation;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
