@@ -1,24 +1,24 @@
 package com.bros.minesweeper.domain.model;
 
-public class EstratègiaPerTirades implements EstratègiaPuntuació{
-	private Integer tiradesMàximes;
+public class EstrategiaPerTirades implements EstrategiaPuntuacio{
+	private Integer tiradesMaximes;
 
 	
 	
-	public EstratègiaPerTirades(Integer tiradesMàximes) {
+	public EstrategiaPerTirades(Integer tiradesMaximes) {
 		super();
-		this.tiradesMàximes = tiradesMàximes;
+		this.tiradesMaximes = tiradesMaximes;
 	}
 
 
 
 	@Override
-	public Integer getPuntuació(Partida partida) {
+	public Integer getPuntuacio(Partida partida) {
 		Integer tiradesActuals = partida.getNombreTirades();
-		if (tiradesActuals > this.tiradesMàximes) {
+		if (tiradesActuals > this.tiradesMaximes) {
 			return 0;
 		}
-		return this.tiradesMàximes - tiradesActuals;
+		return this.tiradesMaximes - tiradesActuals;
 	}
 	
 }

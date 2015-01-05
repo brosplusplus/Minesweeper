@@ -1,23 +1,17 @@
 package com.bros.minesweeper.presentation;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Random;
 
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import java.awt.Button;
 
 public class menuPrincipal {
 
@@ -75,7 +69,7 @@ public class menuPrincipal {
 		btnPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				/**
-				 * TODO afegir funció comprovar nivells
+				 * TODO afegir funciï¿½ comprovar nivells
 				 */
 				seleccionaNivell.main(null);
 				frame.dispose();
@@ -95,7 +89,7 @@ public class menuPrincipal {
 		verticalBox.add(btnExit);
 		btnExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				identificació.main(null);
+				identificacio.main(null);
 				frame.dispose();
 			}
 		});

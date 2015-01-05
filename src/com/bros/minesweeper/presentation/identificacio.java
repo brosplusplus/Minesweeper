@@ -18,7 +18,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class identificació {
+public class identificacio {
 
 	private JFrame frame;
 	private JTextField textUser;
@@ -31,7 +31,7 @@ public class identificació {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					identificació window = new identificació();
+					identificacio window = new identificacio();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +43,7 @@ public class identificació {
 	/**
 	 * Create the application.
 	 */
-	public identificació() {
+	public identificacio() {
 		initialize();
 	}
 
@@ -156,7 +156,7 @@ public class identificació {
 		btnEntry.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				/**
-				 * TODO substituir random login per autenticació 
+				 * TODO substituir random login per autenticaciï¿½ 
 				 */
 				Random r = new Random();
 				float ok = r.nextFloat();
@@ -167,7 +167,7 @@ public class identificació {
 					frame.dispose();
 				}
 				else {
-					lblMessageArea.setText("Convinació usuari i contraseya incorrectes");
+					lblMessageArea.setText("Convinaciï¿½ usuari i contraseya incorrectes");
 				}
 			}
 		});

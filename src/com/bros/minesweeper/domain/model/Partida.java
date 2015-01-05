@@ -13,8 +13,8 @@ public class Partida {
 	 * Partida own atributes
 	 */
 	private Integer idPartida;
-	private Boolean estàAcabada;
-	private Boolean estàGuanyada;
+	private Boolean estaAcabada;
+	private Boolean estaGuanyada;
 	private Integer nombreTirades;
 	private Integer casellesPerDescobrir;
 	
@@ -26,7 +26,7 @@ public class Partida {
 	
 	private Nivell teNivell;
 	
-	private EstratègiaPuntuació estratègia;
+	private EstrategiaPuntuacio estrategia;
 	
 	private ArrayList<Casella> taulell;
 
@@ -36,17 +36,17 @@ public class Partida {
 	public void setIdPartida(Integer idPartida) {
 		this.idPartida = idPartida;
 	}
-	public Boolean getEstàAcabada() {
-		return estàAcabada;
+	public Boolean getEstaAcabada() {
+		return estaAcabada;
 	}
-	public void setEstàAcabada(Boolean estàAcabada) {
-		this.estàAcabada = estàAcabada;
+	public void setEstaAcabada(Boolean estaAcabada) {
+		this.estaAcabada = estaAcabada;
 	}
-	public Boolean getEstàGuanyada() {
-		return estàGuanyada;
+	public Boolean getEstaGuanyada() {
+		return estaGuanyada;
 	}
-	public void setEstàGuanyada(Boolean estàGuanyada) {
-		this.estàGuanyada = estàGuanyada;
+	public void setEstaGuanyada(Boolean estaGuanyada) {
+		this.estaGuanyada = estaGuanyada;
 	}
 	public Integer getNombreTirades() {
 		return nombreTirades;
@@ -78,11 +78,11 @@ public class Partida {
 	public void setTeNivell(Nivell teNivell) {
 		this.teNivell = teNivell;
 	}
-	public EstratègiaPuntuació getEstratègia() {
-		return estratègia;
+	public EstrategiaPuntuacio getEstrategia() {
+		return estrategia;
 	}
-	public void setEstratègia(EstratègiaPuntuació estratègia) {
-		this.estratègia = estratègia;
+	public void setEstrategia(EstrategiaPuntuacio estrategia) {
+		this.estrategia = estrategia;
 	}
 	public ArrayList<Casella> getTaulell() {
 		return taulell;
@@ -109,7 +109,7 @@ public class Partida {
 		//TODO implement
 	}
 	
-	public void assignarPuntuació() {
+	public void assignarPuntuacio() {
 		//TODO implement
 	}
 	
@@ -118,6 +118,6 @@ public class Partida {
 	public static void main(String[] args) {
 		Partida p = new Partida();
 		EstatPartida es = p.descobrirCasella(0, 0);
-		System.out.print(es.puntuació);
+		System.out.print(es.puntuacio);
 	}
 }

@@ -1,48 +1,48 @@
 package com.bros.minesweeper.domain.model;
 
 public class Casella {
-	private Integer númeroFila;
-	private Integer númeroColumna;
-	private Integer número;
-	private Boolean estàDescoberta;
-	private Boolean estàMarcada;
-	private Boolean téMina;
+	private Integer numeroFila;
+	private Integer numeroColumna;
+	private Integer numero;
+	private Boolean estaDescoberta;
+	private Boolean estaMarcada;
+	private Boolean teMina;
 	
-	public Integer getNúmeroFila() {
-		return númeroFila;
+	public Integer getNumeroFila() {
+		return numeroFila;
 	}
-	public void setNúmeroFila(Integer númeroFila) {
-		this.númeroFila = númeroFila;
+	public void setNumeroFila(Integer numeroFila) {
+		this.numeroFila = numeroFila;
 	}
-	public Integer getNúmeroColumna() {
-		return númeroColumna;
+	public Integer getNumeroColumna() {
+		return numeroColumna;
 	}
-	public void setNúmeroColumna(Integer númeroColumna) {
-		this.númeroColumna = númeroColumna;
+	public void setNumeroColumna(Integer numeroColumna) {
+		this.numeroColumna = numeroColumna;
 	}
-	public Boolean getEstàDescoberta() {
-		return estàDescoberta;
+	public Boolean getEstaDescoberta() {
+		return estaDescoberta;
 	}
-	public void setEstàDescoberta(Boolean estàDescoberta) {
-		this.estàDescoberta = estàDescoberta;
+	public void setEstaDescoberta(Boolean estaDescoberta) {
+		this.estaDescoberta = estaDescoberta;
 	}
-	public Boolean getEstàMarcada() {
-		return estàMarcada;
+	public Boolean getEstaMarcada() {
+		return estaMarcada;
 	}
-	public void setEstàMarcada(Boolean estàMarcada) {
-		this.estàMarcada = estàMarcada;
+	public void setestaMarcada(Boolean estaMarcada) {
+		this.estaMarcada = estaMarcada;
 	}
-	public Boolean getTéMina() {
-		return téMina;
+	public Boolean getTeMina() {
+		return teMina;
 	}
-	public void setTéMina(Boolean téMina) {
-		this.téMina = téMina;
+	public void setTeMina(Boolean teMina) {
+		this.teMina = teMina;
 	}
-	public Integer getNúmero() {
-		return número;
+	public Integer getNumero() {
+		return numero;
 	}
-	public void setNúmero(Integer número) {
-		this.número = número;
+	public void setNumero(Integer Numero) {
+		this.numero = Numero;
 	}
 
 	public void marcar(){
@@ -50,11 +50,11 @@ public class Casella {
 	}
 	
 	public Boolean tensMina() {
-		return this.getTéMina();
+		return this.getTeMina();
 	}
 
-	public Boolean estàsDescoberta() {
-		return this.getEstàDescoberta();
+	public Boolean estaDescoberta() {
+		return this.getEstaDescoberta();
 	}
 	
 	public void descobrirCasella() {

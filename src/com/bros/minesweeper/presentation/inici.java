@@ -12,7 +12,6 @@ import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 
 public class inici {
 
@@ -100,7 +99,7 @@ public class inici {
 		btnEntry.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				identificació.main(null);
+				identificacio.main(null);
 				frame.dispose();
 			}
 		});
