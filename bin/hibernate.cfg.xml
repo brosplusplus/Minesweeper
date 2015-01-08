@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
                                          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
- <session-factory>
+ <session-factory name="">
   <property name="hibernate.connection.driver_class">org.apache.derby.jdbc.ClientDriver</property>
   <property name="hibernate.connection.url">jdbc:derby://localhost:1527/HibernateDB;create=true</property>
   <property name="hibernate.connection.username">postgres</property>
@@ -13,5 +13,6 @@
   <property name="hibernate.cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
   <property name="hibernate.dialect">org.hibernate.dialect.DerbyDialect</property>
   <property name="hibernate.show_sql">true</property>
+  <mapping class="com.bros.minesweeper.domain.model.UsuariRegistrat"/>
  </session-factory>
 </hibernate-configuration>

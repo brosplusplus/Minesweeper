@@ -1,12 +1,15 @@
 package com.bros.minesweeper.domain.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="UsuariRegistrat")
 public abstract class UsuariRegistrat {
 	private String nom;
 	private String cognom;
-	private String username;
+	@Id private String username;
 	
 	public String getCognom() {
 		return cognom;
@@ -17,6 +20,8 @@ public abstract class UsuariRegistrat {
 	public String getUsername() {
 		return username;
 	}
+	
+	
 	public void setUsername(String username) {
 		this.username = username;
 	}
