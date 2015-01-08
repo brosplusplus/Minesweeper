@@ -1,5 +1,8 @@
 package com.bros.minesweeper.domain.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Casella {
 	private Integer numeroFila;
 	private Integer numeroColumna;

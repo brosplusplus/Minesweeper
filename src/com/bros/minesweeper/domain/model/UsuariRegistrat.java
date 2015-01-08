@@ -1,5 +1,8 @@
 package com.bros.minesweeper.domain.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public abstract class UsuariRegistrat {
 	private String nom;
 	private String cognom;

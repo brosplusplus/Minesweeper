@@ -1,5 +1,8 @@
 package com.bros.minesweeper.domain.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class EstatPartida {
 	public Boolean guanyada;
 	public Boolean acabada;

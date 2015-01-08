@@ -1,10 +1,15 @@
 package com.bros.minesweeper.domain.model;
 
+import javax.persistence.Entity;
+
+
 /**
  * Nivell represents a level of a minesweeper game
  * @author Borja Arias
  * @version 0.1
  */
+
+@Entity
 public class Nivell {
 	private String nom;
 	/**

@@ -1,5 +1,8 @@
 package com.bros.minesweeper.domain.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class EstrategiaPerTirades implements EstrategiaPuntuacio{
 	private Integer tiradesMaximes;
 

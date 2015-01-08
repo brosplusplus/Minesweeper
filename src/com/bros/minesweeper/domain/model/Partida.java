@@ -1,6 +1,7 @@
 package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
+import javax.persistence.Entity;
 
 /**
  * Partida represents a single game of minesweeper
@@ -8,6 +9,8 @@ import java.util.ArrayList;
  * @author Borja Arias
  * @version 0.1
  */
+
+@Entity
 public class Partida {
 	/**
 	 * Partida own atributes
