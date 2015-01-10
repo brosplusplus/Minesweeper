@@ -5,15 +5,11 @@ import javax.persistence.Entity;
 @Entity
 public class EstrategiaPerTirades implements EstrategiaPuntuacio{
 	private Integer tiradesMaximes;
-
-	
 	
 	public EstrategiaPerTirades(Integer tiradesMaximes) {
 		super();
 		this.tiradesMaximes = tiradesMaximes;
 	}
-
-
 
 	@Override
 	public Integer getPuntuacio(Partida partida) {

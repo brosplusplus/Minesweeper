@@ -29,40 +29,32 @@ public class Nivell {
 		return nom;
 	}
 
-
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
 
 	public Integer getNombreCasellesxFila() {
 		return nombreCasellesxFila;
 	}
 
-
 	public void setNombreCasellesxFila(Integer nombreCasellesxFila) {
 		this.nombreCasellesxFila = nombreCasellesxFila;
 	}
-
 
 	public Integer getNombreCasellesxColumna() {
 		return nombreCasellesxColumna;
 	}
 
-
 	public void setNombreCasellesxColumna(Integer nombreCasellesxColumna) {
 		this.nombreCasellesxColumna = nombreCasellesxColumna;
 	}
-
 
 	public Integer getNombreMines() {
 		return nombreMines;
 	}
 
-
 	public void setNombreMines(Integer nombreMines) {
 		this.nombreMines = nombreMines;
 	}
-	
 	
 }

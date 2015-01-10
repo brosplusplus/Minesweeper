@@ -36,76 +36,104 @@ public class Partida {
 	public Integer getIdPartida() {
 		return idPartida;
 	}
+	
 	public void setIdPartida(Integer idPartida) {
 		this.idPartida = idPartida;
 	}
+	
 	public Boolean getEstaAcabada() {
 		return estaAcabada;
 	}
+	
 	public void setEstaAcabada(Boolean estaAcabada) {
 		this.estaAcabada = estaAcabada;
 	}
+	
 	public Boolean getEstaGuanyada() {
 		return estaGuanyada;
 	}
+	
 	public void setEstaGuanyada(Boolean estaGuanyada) {
 		this.estaGuanyada = estaGuanyada;
 	}
+	
 	public Integer getNombreTirades() {
 		return nombreTirades;
 	}
+	
 	public void setNombreTirades(Integer nombreTirades) {
 		this.nombreTirades = nombreTirades;
 	}
+	
 	public Integer getCasellesPerDescobrir() {
 		return casellesPerDescobrir;
 	}
+	
 	public void setCasellesPerDescobrir(Integer casellesPerDescobrir) {
 		this.casellesPerDescobrir = casellesPerDescobrir;
 	}
+	
 	public Jugador getJugadorPartidaActual() {
 		return jugadorPartidaActual;
 	}
+	
 	public void setJugadorPartidaActual(Jugador jugadorPartidaActual) {
 		this.jugadorPartidaActual = jugadorPartidaActual;
 	}
+	
 	public Jugador getJugadorPartidaJugada() {
 		return jugadorPartidaJugada;
 	}
+	
 	public void setJugadorPartidaJugada(Jugador jugadorPartidaJugada) {
 		this.jugadorPartidaJugada = jugadorPartidaJugada;
 	}
+	
 	public Nivell getTeNivell() {
 		return teNivell;
 	}
+	
 	public void setTeNivell(Nivell teNivell) {
 		this.teNivell = teNivell;
 	}
+	
 	public EstrategiaPuntuacio getEstrategia() {
 		return estrategia;
 	}
+	
 	public void setEstrategia(EstrategiaPuntuacio estrategia) {
 		this.estrategia = estrategia;
 	}
+	
 	public ArrayList<Casella> getTaulell() {
 		return taulell;
 	}
+	
 	public void setTaulell(ArrayList<Casella> taulell) {
 		this.taulell = taulell;
 	}
 	
 	public void marcarCasella(int numF, int numC){
 		//TODO implement
+		Casella c = new Casella();
+		c = getCaselles(numF, numC);
+		c.marcar();
 	}
 	
 	public void desmarcarCasella (int numF, int numC) {
 		//TODO implement
+		Casella c = new Casella();
+		c = getCaselles(numF, numC);
+		c.desmarcar();
 	}
 	
 	public EstatPartida descobrirCasella (int numF, int numC) {
 		//TODO implement
 		EstatPartida es = new EstatPartida();
 		return es;
+		Casella c = new Casella();
+		c = getCaselles(numF, numC);
+		c.descobrirCasella();
 	}
 	
 	public void inicialitzarCaselles( ) {

@@ -9,6 +9,7 @@ import javax.persistence.Table;
 public abstract class UsuariRegistrat {
 	private String nom;
 	private String cognom;
+	private String pwd;
 	@Id private String username;
 	
 	public String getCognom() {
@@ -21,7 +22,6 @@ public abstract class UsuariRegistrat {
 		return username;
 	}
 	
-	
 	public void setUsername(String username) {
 		this.username = username;
 	}
@@ -31,8 +31,7 @@ public abstract class UsuariRegistrat {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	private String pwd;
-	
+		
 	public String getNom() {
 		return nom;
 	}
