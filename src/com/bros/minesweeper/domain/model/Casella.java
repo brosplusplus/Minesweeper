@@ -32,7 +32,7 @@ public class Casella {
 	public Boolean getEstaMarcada() {
 		return estaMarcada;
 	}
-	public void setestaMarcada(Boolean estaMarcada) {
+	public void setEstaMarcada(Boolean estaMarcada) {
 		this.estaMarcada = estaMarcada;
 	}
 	public Boolean getTeMina() {
@@ -49,7 +49,25 @@ public class Casella {
 	}
 
 	public void marcar(){
-		//TODO implement
+		try {
+			if (getEstaDescoberta()) throw new Exception("La casella esta descoberta i no es pot marcar");
+			if (getEstaMarcada()) throw new Exception("La casella ja esta marcada");
+			setEstaMarcada(true);
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage()); 
+		}
+	}
+	
+	public void desmarcar(){
+		try {
+			if (getEstaDescoberta()) throw new Exception("La casella esta descoberta i no es pot desmarcar");
+			if (!getEstaMarcada()) throw new Exception("La casella ja esta desmarcada");
+			setEstaMarcada(false);
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage()); 
+		}
 	}
 	
 	public Boolean tensMina() {
@@ -61,6 +79,13 @@ public class Casella {
 	}
 	
 	public void descobrirCasella() {
-		//TODO implement
+		try {
+			if (getEstaDescoberta()) throw new Exception("La casella esta descoberta");
+			if (getEstaMarcada()) throw new Exception("La casella esta marcada i no es pot descobrir");
+			setEstaDescoberta(true);
+		}
+		catch (Exception e){
+			System.out.println(e.getMessage()); 
+		}
 	}
 }
