@@ -122,21 +122,18 @@ public class Partida {
 	}
 	
 	public void marcarCasella(int numF, int numC){
-		//TODO implement
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.marcar();
 	}
 	
 	public void desmarcarCasella (int numF, int numC) {
-		//TODO implement
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.desmarcar();
 	}
 	
 	public EstatPartida descobrirCasella (int numF, int numC) {
-		//TODO implement
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.descobrirCasella();
