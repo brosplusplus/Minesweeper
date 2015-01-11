@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="InfoNivell")
+@Table(name="Nivell")
 public class Nivell {
 	private String nom;
 	/**
