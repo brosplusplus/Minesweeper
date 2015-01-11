@@ -1,6 +1,7 @@
 package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Partida represents a single game of minesweeper
@@ -37,7 +39,12 @@ public class Partida {
 	
 	private Nivell teNivell;
 	
+	@Transient
 	private EstrategiaPuntuacio estrategia;
+	@Transient
+	private Integer puntuacio_temps;
+	@Transient
+	private Integer puntuacio_tirades;
 	
 	@OneToMany
 	private ArrayList<ArrayList<Casella>> taulell;

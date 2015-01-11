@@ -1,6 +1,5 @@
 package com.bros.minesweeper.domain.model;
 
-import javax.persistence.Entity;
 
 
 /**
@@ -11,7 +10,6 @@ import javax.persistence.Entity;
  *
  */
 
-@Entity
 public interface EstrategiaPuntuacio {
 	public Integer getPuntuacio(Partida partida);
 }
