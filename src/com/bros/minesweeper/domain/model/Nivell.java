@@ -36,8 +36,6 @@ public class Nivell {
 	 * Association attributes
 	 */
 	
-	private ArrayList<Partida> partides;
-	
 	@Id
 	@Column(name=("nomNivell"))
 	public String getNom() {
@@ -70,13 +68,5 @@ public class Nivell {
 
 	public void setNombreMines(Integer nombreMines) {
 		this.nombreMines = nombreMines;
-	}
-	
-	@OneToMany(targetEntity=Partida.class, mappedBy="teNivell", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-	public ArrayList<Partida> getPartides() {
-		return partides;
-	}
-	public void setPartides(ArrayList<Partida> partides) {
-		this.partides = partides;
 	}
 }
