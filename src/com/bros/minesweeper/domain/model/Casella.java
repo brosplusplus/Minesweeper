@@ -1,27 +1,35 @@
 package com.bros.minesweeper.domain.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Embeddable;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Casella")
 public class Casella {
-	private Integer numeroFila;
-	private Integer numeroColumna;
+	@EmbeddedId
+	private CasellaID id;
+	
 	private Integer numero;
 	private Boolean estaDescoberta;
 	private Boolean estaMarcada;
 	private Boolean teMina;
 	
 	public Integer getNumeroFila() {
-		return numeroFila;
+		return id.numeroFila;
 	}
 	public void setNumeroFila(Integer numeroFila) {
-		this.numeroFila = numeroFila;
+		this.id.numeroFila = numeroFila;
 	}
 	public Integer getNumeroColumna() {
-		return numeroColumna;
+		return this.id.numeroColumna;
 	}
 	public void setNumeroColumna(Integer numeroColumna) {
-		this.numeroColumna = numeroColumna;
+		this.id.numeroColumna = numeroColumna;
 	}
 	public Boolean getEstaDescoberta() {
 		return estaDescoberta;
@@ -87,5 +95,13 @@ public class Casella {
 		catch (Exception e){
 			System.out.println(e.getMessage()); 
 		}
+	}
+	
+	@Embeddable
+	public class CasellaID implements Serializable{
+		@ManyToOne 
+		private Partida idPartida;
+		private Integer numeroFila;
+		private Integer numeroColumna;
 	}
 }
