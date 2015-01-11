@@ -1,13 +1,14 @@
 package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
-import javax.persistence.Column;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
@@ -39,6 +40,7 @@ public class Partida {
 	
 	private EstrategiaPuntuacio estrategia;
 	
+	@OneToMany
 	private ArrayList<ArrayList<Casella>> taulell;
 
 	@Id
@@ -134,21 +136,18 @@ public class Partida {
 	}
 	
 	public void marcarCasella(int numF, int numC){
-		//TODO implement
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.marcar();
 	}
 	
 	public void desmarcarCasella (int numF, int numC) {
-		//TODO implement
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.desmarcar();
 	}
 	
 	public EstatPartida descobrirCasella (int numF, int numC) {
-		//TODO implement
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.descobrirCasella();
