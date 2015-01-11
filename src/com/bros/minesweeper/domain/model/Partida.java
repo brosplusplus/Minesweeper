@@ -2,6 +2,7 @@ package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
 import javax.persistence.Column;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -38,7 +39,7 @@ public class Partida {
 	
 	private EstrategiaPuntuacio estrategia;
 	
-	private ArrayList<Casella> taulell;
+	private ArrayList<ArrayList<Casella>> taulell;
 
 	@Id
 	@GeneratedValue
@@ -117,39 +118,59 @@ public class Partida {
 		this.estrategia = estrategia;
 	}
 	
-	public ArrayList<Casella> getTaulell() {
+	public ArrayList<ArrayList<Casella>> getTaulell() {
 		return taulell;
 	}
 	
-	public void setTaulell(ArrayList<Casella> taulell) {
+	public void setTaulell(ArrayList<ArrayList<Casella>> taulell) {
 		this.taulell = taulell;
+	}
+	
+	private void setCasella(int numF, int numC, Casella c) {
+		this.taulell.get(numF).set(numC, c);
+	}
+	private Casella getCasella(int numF, int numC) {
+		return this.taulell.get(numF).get(numC);
 	}
 	
 	public void marcarCasella(int numF, int numC){
 		//TODO implement
 		Casella c = new Casella();
-		c = getCaselles(numF, numC);
+		c = getCasella(numF, numC);
 		c.marcar();
 	}
 	
 	public void desmarcarCasella (int numF, int numC) {
 		//TODO implement
 		Casella c = new Casella();
-		c = getCaselles(numF, numC);
+		c = getCasella(numF, numC);
 		c.desmarcar();
 	}
 	
 	public EstatPartida descobrirCasella (int numF, int numC) {
 		//TODO implement
+		Casella c = new Casella();
+		c = getCasella(numF, numC);
+		c.descobrirCasella();
 		EstatPartida es = new EstatPartida();
 		return es;
-		Casella c = new Casella();
-		c = getCaselles(numF, numC);
-		c.descobrirCasella();
 	}
 	
 	public void inicialitzarCaselles( ) {
-		//TODO implement
+		Integer filesDelNivell = this.teNivell.getNombreCasellesxFila();
+		Integer columnesDelNivell = this.teNivell.getNombreCasellesxColumna();
+		for (int i = 0; i < filesDelNivell; ++i) {
+			for (int j = 0; j <  columnesDelNivell; ++i) {
+				Casella c = new Casella();
+				c.setNumeroFila(i);
+				c.setNumeroColumna(j);
+				c.setNumero(null);
+				c.setEstaDescoberta(false);
+				c.setEstaMarcada(false);
+				c.setTeMina(null);
+				setCasella(i, j, c);
+			}
+		}
 	}
 	
 	public void assignarPuntuacio() {
