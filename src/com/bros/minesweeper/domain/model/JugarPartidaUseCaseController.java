@@ -7,6 +7,15 @@ public class JugarPartidaUseCaseController {
 	/**
 	 * Association attributes
 	 */
+	private Partida partida;
+	
+	public Partida getPartida() {
+		return partida;
+	}
+
+	public void setPartida(Partida partida) {
+		this.partida = partida;
+	}
 	
 	/**
 	 * Methods
@@ -16,4 +25,10 @@ public class JugarPartidaUseCaseController {
 	{
 	
 	}
+
+	public void obtenirNivells() //ArrayList<Nivell> 
+	{
+		
+	}
+
 }
