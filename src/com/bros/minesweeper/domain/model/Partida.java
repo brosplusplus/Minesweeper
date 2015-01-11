@@ -1,8 +1,14 @@
 package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
+import javax.persistence.Column;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * Partida represents a single game of minesweeper
@@ -12,6 +18,7 @@ import javax.persistence.Entity;
  */
 
 @Entity
+@Table(name="InfoPartida")
 public class Partida {
 	/**
 	 * Partida own atributes
@@ -34,6 +41,9 @@ public class Partida {
 	
 	private ArrayList<ArrayList<Casella>> taulell;
 
+	@Id
+	@GeneratedValue
+	@Column(name="idPartida")
 	public Integer getIdPartida() {
 		return idPartida;
 	}
@@ -90,6 +100,8 @@ public class Partida {
 		this.jugadorPartidaJugada = jugadorPartidaJugada;
 	}
 	
+	@ManyToOne
+	@JoinColumn(name="nomNivell")
 	public Nivell getTeNivell() {
 		return teNivell;
 	}

@@ -1,5 +1,7 @@
 package com.bros.minesweeper.domain.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -10,7 +12,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name="USUARIREGISTRAT")
 @Inheritance(strategy=InheritanceType.JOINED)
-public abstract class UsuariRegistrat {
+public abstract class UsuariRegistrat{
 	@Column(name="nom")
 	private String nom;
 	@Column(name="cognom")
