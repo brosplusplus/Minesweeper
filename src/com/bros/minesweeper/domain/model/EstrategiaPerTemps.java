@@ -1,8 +1,6 @@
 package com.bros.minesweeper.domain.model;
 
-import javax.persistence.Entity;
 
-@Entity
 public class EstrategiaPerTemps implements EstrategiaPuntuacio {
 
 	/**

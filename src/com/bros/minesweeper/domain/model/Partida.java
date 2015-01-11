@@ -1,14 +1,18 @@
 package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /**
  * Partida represents a single game of minesweeper
@@ -32,12 +36,21 @@ public class Partida {
 	/**
 	 * Association attributes
 	 */
+	@OneToOne (fetch=FetchType.EAGER)
+	@JoinColumn(name="email")
 	private Jugador jugadorPartidaActual;
+	@ManyToOne
+	@JoinColumn(name="email")
 	private Jugador jugadorPartidaJugada;
 	
 	private Nivell teNivell;
 	
+	@Transient
 	private EstrategiaPuntuacio estrategia;
+	@Transient
+	private Integer puntuacio_temps;
+	@Transient
+	private Integer puntuacio_tirades;
 	
 	@OneToMany
 	private ArrayList<ArrayList<Casella>> taulell;
@@ -111,10 +124,12 @@ public class Partida {
 		this.teNivell = teNivell;
 	}
 	
+	@Transient
 	public EstrategiaPuntuacio getEstrategia() {
 		return estrategia;
 	}
 	
+	@Transient
 	public void setEstrategia(EstrategiaPuntuacio estrategia) {
 		this.estrategia = estrategia;
 	}

@@ -2,6 +2,7 @@ package com.bros.minesweeper.domain.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
@@ -18,6 +19,15 @@ public class Casella {
 	private Boolean estaDescoberta;
 	private Boolean estaMarcada;
 	private Boolean teMina;
+	
+	public Casella() {
+		id = new CasellaID();
+	}
+	
+	public void setPartida(Partida p)
+	{
+		this.id.partida = p;
+	}
 	
 	public Integer getNumeroFila() {
 		return id.numeroFila;
@@ -100,7 +110,7 @@ public class Casella {
 	@Embeddable
 	public class CasellaID implements Serializable{
 		@ManyToOne 
-		private Partida idPartida;
+		private Partida partida;
 		private Integer numeroFila;
 		private Integer numeroColumna;
 	}
