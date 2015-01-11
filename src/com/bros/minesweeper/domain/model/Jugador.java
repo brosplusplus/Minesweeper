@@ -10,7 +10,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Jugador")
 public class Jugador extends UsuariRegistrat{
-	@Id
 	@Column(name="email")
 	private String email;
 
