@@ -1,5 +1,7 @@
 package com.bros.minesweeper.domain.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -7,8 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Jugador")
-public class Jugador extends UsuariRegistrat {
-	@Id
+public class Jugador extends UsuariRegistrat{
 	@Column(name="email")
 	private String email;
 
