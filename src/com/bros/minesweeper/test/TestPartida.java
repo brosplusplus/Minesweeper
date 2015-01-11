@@ -1,9 +1,12 @@
-package com.bros.minesweeper.domain.model;
+package com.bros.minesweeper.test;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
+
+import com.bros.minesweeper.domain.model.Nivell;
+import com.bros.minesweeper.domain.model.Partida;
 
 
 public class TestPartida {
