@@ -66,6 +66,12 @@ public class Partida {
 	@Transient
 	private Integer nRows; //numero de files del taulell
 
+	public Partida(int id, Jugador jugName, String nom, 
+			EstrategiaPuntuacio estrategiaEscollida) {
+		this.idPartida = id;
+		this.jugadorPartidaActual = jugName;
+	}
+
 	public Integer getIdPartida() {
 		return idPartida;
 	}

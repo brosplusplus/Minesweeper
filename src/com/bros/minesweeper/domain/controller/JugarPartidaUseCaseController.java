@@ -10,6 +10,7 @@ import com.bros.minesweeper.domain.factory.FactoriaControladors;
 import com.bros.minesweeper.domain.factory.FactoriaEstrategiaPuntuacio;
 import com.bros.minesweeper.domain.model.EstatPartida;
 import com.bros.minesweeper.domain.model.EstrategiaPuntuacio;
+import com.bros.minesweeper.domain.model.Jugador;
 import com.bros.minesweeper.domain.model.Partida;
 
 public class JugarPartidaUseCaseController {
@@ -18,7 +19,7 @@ public class JugarPartidaUseCaseController {
 	 * Association attributes
 	 */
 	private Partida partida;
-	private String jugName;
+	private Jugador jugName;
 	
 	public Partida getPartida() {
 		return partida;
@@ -29,11 +30,11 @@ public class JugarPartidaUseCaseController {
 	}
 	
 	public String getJugName() {
-		return jugName;
+		return jugName.getNom();
 	}
 
 	public void setJugName(String jugName) {
-		this.jugName = jugName;
+		this.jugName.setNom(jugName);
 	}
 	
 	/**
