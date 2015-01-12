@@ -192,7 +192,12 @@ public class Partida {
 	}
 	
 	public void colocarMines(){
-		
+		Integer filesDelNivell = this.teNivell.getNombreCasellesxFila();
+		Integer columnesDelNivell = this.teNivell.getNombreCasellesxColumna();
+		Integer numMinesDelNivell = this.teNivell.getNombreMines();
+		while(numMinesDelNivell > 0){
+			
+		}
 	}
 	
 	public void crearCaselles (int F, int C, int nM) {
