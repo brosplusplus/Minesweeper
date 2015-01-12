@@ -133,13 +133,16 @@ public class Partida {
 	
 	public void setJugadorPartidaActual(Jugador jugadorPartidaActual) {
 		this.jugadorPartidaActual = jugadorPartidaActual;
-	}	private void setCasellaTaulell(int numF, int numC, Casella c) {
+	}	
+	
+	private void setCasellaTaulell(int numF, int numC, Casella c) {
 		int posicio = this.nCols*numF + numC;
 		this.taulell.set(posicio, c);
 	}
 	private Casella getCasellaTaulell(int numF, int numC) {
 		int posicio = this.nCols*numF + numC;
 		return this.taulell.get(posicio);
+	}
 	
 	public Jugador getJugadorPartidaJugada() {
 		return jugadorPartidaJugada;
