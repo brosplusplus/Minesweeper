@@ -154,19 +154,19 @@ public class Partida {
 		return get(this.taulell, numF ,numC);
 	}
 	
-	public void marcarCasella(int numF, int numC){
+	public void marcarCasella(int numF, int numC) throws Exception{
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.marcar();
 	}
 	
-	public void desmarcarCasella (int numF, int numC) {
+	public void desmarcarCasella (int numF, int numC) throws Exception {
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.desmarcar();
 	}
 	
-	public EstatPartida descobrirCasella (int numF, int numC) {
+	public EstatPartida descobrirCasella (int numF, int numC) throws Exception {
 		Casella c = new Casella();
 		c = getCasella(numF, numC);
 		c.descobrirCasella();
@@ -208,7 +208,7 @@ public class Partida {
 	}
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Partida p = new Partida();
 		EstatPartida es = p.descobrirCasella(0, 0);
 		System.out.print(es.puntuacio);

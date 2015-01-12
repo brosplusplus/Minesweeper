@@ -71,26 +71,16 @@ public class Casella {
 		this.numero = Numero;
 	}
 
-	public void marcar(){
-		try {
-			if (getEstaDescoberta()) throw new Exception("La casella esta descoberta i no es pot marcar");
-			if (getEstaMarcada()) throw new Exception("La casella ja esta marcada");
-			setEstaMarcada(true);
-		}
-		catch (Exception e){
-			System.out.println(e.getMessage()); 
-		}
+	public void marcar() throws Exception{
+		if (getEstaDescoberta()) throw new Exception("La casella esta descoberta i no es pot marcar");
+		if (getEstaMarcada()) throw new Exception("La casella ja esta marcada");
+		setEstaMarcada(true);
 	}
 	
-	public void desmarcar(){
-		try {
-			if (getEstaDescoberta()) throw new Exception("La casella esta descoberta i no es pot desmarcar");
-			if (!getEstaMarcada()) throw new Exception("La casella ja esta desmarcada");
-			setEstaMarcada(false);
-		}
-		catch (Exception e){
-			System.out.println(e.getMessage()); 
-		}
+	public void desmarcar() throws Exception{
+		if (getEstaDescoberta()) throw new Exception("La casella esta descoberta i no es pot desmarcar");
+		if (!getEstaMarcada()) throw new Exception("La casella ja esta desmarcada");
+		setEstaMarcada(false);
 	}
 	
 	public Boolean tensMina() {
@@ -101,14 +91,9 @@ public class Casella {
 		return this.getEstaDescoberta();
 	}
 	
-	public void descobrirCasella() {
-		try {
-			if (getEstaDescoberta()) throw new Exception("La casella esta descoberta");
-			if (getEstaMarcada()) throw new Exception("La casella esta marcada i no es pot descobrir");
-			setEstaDescoberta(true);
-		}
-		catch (Exception e){
-			System.out.println(e.getMessage()); 
-		}
+	public void descobrirCasella() throws Exception {
+		if (getEstaDescoberta()) throw new Exception("La casella esta descoberta");
+		if (getEstaMarcada()) throw new Exception("La casella esta marcada i no es pot descobrir");
+		setEstaDescoberta(true);
 	}
 }
