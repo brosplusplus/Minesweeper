@@ -1,9 +1,5 @@
 package com.bros.minesweeper.domain.controller;
 
-import java.util.ArrayList;
-
-import javassist.util.proxy.FactoryHelper;
-
 import com.bros.minesweeper.domain.model.Partida;
 
 public class JugarPartidaUseCaseController {
@@ -24,9 +20,23 @@ public class JugarPartidaUseCaseController {
 	/**
 	 * Methods
 	 */
+	public void marcarCasella (int numF, int numC) {
+		this.partida.marcarCasella(numF, numC);
+	}
 	
-	public void FerAutenticació(String userN,String passwd) {
+	public void desmarcarCasella (int numF, int numC) {
+		this.partida.desmarcarCasella(numF, numC);
+	}
 		
+	public void FerAutenticacio(String userN,String passwd) {
+		FactoriaControladors fc = new FactoriaControladors()
+		fc = getCtrlJugador();
+		try {
+			
+		}
+		catch (Exception e) {
+			System.out.println(e.getMessage());	
+		}
 	}
 
 	public void obtenirNivells() {//ArrayList<Nivell> 
