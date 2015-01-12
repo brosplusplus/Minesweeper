@@ -238,7 +238,6 @@ public class Partida {
 	}
 	
 
-	
 	private void set(List<Casella> array, int x, int y, Casella casella) {
 		int index = x * this.nCols + y;
 		array.set(index, casella);
