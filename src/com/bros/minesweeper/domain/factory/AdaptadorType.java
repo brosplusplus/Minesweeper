@@ -1,5 +1,5 @@
 package com.bros.minesweeper.domain.factory;
 
-public class FactoriaAdaptador {
-
+public enum AdaptadorType {
+	OWN
 }

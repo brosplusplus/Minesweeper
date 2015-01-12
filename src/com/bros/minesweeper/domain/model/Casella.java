@@ -96,4 +96,8 @@ public class Casella {
 		if (getEstaMarcada()) throw new Exception("La casella esta marcada i no es pot descobrir");
 		setEstaDescoberta(true);
 	}
+
+	public void incrementaNumero() {
+		++this.numero;
+	}
 }
