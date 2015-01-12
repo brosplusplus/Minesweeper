@@ -1,8 +1,12 @@
 package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Random;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +17,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
+import com.bros.minesweeper.domain.datainterface.CtrlNivell;
 
 /**
  * Partida represents a single game of minesweeper
@@ -66,10 +72,18 @@ public class Partida {
 	@Transient
 	private Integer nRows; //numero de files del taulell
 
-	public Partida(int id, Jugador jugName, String nom, 
+	public Partida(int id, Jugador jugName, String niv, 
 			EstrategiaPuntuacio estrategiaEscollida) {
 		this.idPartida = id;
+		this.estaAcabada = false;
+		this.estaGuanyada = false;
+		this.nombreTirades = 0;
+		this.taulell = new ArrayList<Casella>();
 		this.jugadorPartidaActual = jugName;
+		this.teNivell = CtrlNivell.get(niv);
+		this.estrategia = estrategiaEscollida;
+		this.inicialitzarCaselles();
+		this.assignarPuntuacio();		
 	}
 
 	public Integer getIdPartida() {
@@ -181,10 +195,10 @@ public class Partida {
 	}
 	
 	public void inicialitzarCaselles( ) {
-		Integer filesDelNivell = this.teNivell.getNombreCasellesxFila();
-		this.nRows = filesDelNivell;
-		Integer columnesDelNivell = this.teNivell.getNombreCasellesxColumna();
-		this.nCols = columnesDelNivell;
+		int columnesDelNivell = this.teNivell.getNombreCasellesxFila();
+		this.nRows = columnesDelNivell;
+		int filesDelNivell = this.teNivell.getNombreCasellesxColumna();
+		this.nCols = filesDelNivell;
 		for (int i = 0; i < filesDelNivell; ++i) {
 			for (int j = 0; j <  columnesDelNivell; ++j) {
 				Casella c = new Casella();
@@ -250,9 +264,9 @@ public class Partida {
 	}
 	
 	
-	public static void main(String[] args) throws Exception {
+	/*public static void main(String[] args) throws Exception {
 		Partida p = new Partida();
 		EstatPartida es = p.descobrirCasella(0, 0);
 		System.out.print(es.puntuacio);
-	}
+	}*/
 }
