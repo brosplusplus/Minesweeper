@@ -37,10 +37,10 @@ public class CtrlNivell {
             ArrayList<Nivell> nivells = new ArrayList<Nivell>();
             while(results.next()){
             	Nivell n = new Nivell();
-            	n.setNom(results.getString(1));
-            	n.setNombreCasellesxFila(results.getInt(2));
-            	n.setNombreCasellesxColumna(results.getInt(3));
-            	n.setNombreMines(results.getInt(4));
+            	n.setNom(results.getString("nom"));
+            	n.setNombreCasellesxFila(results.getInt("nombreCasellesxFila"));
+            	n.setNombreCasellesxColumna(results.getInt("nombreCasellesxColumna"));
+            	n.setNombreMines(results.getInt("nombreMines"));
             	nivells.add(n);
             }
             results.close();
@@ -62,10 +62,10 @@ public class CtrlNivell {
             ResultSet result = stmt.executeQuery("SELECT * FROM " + tableName +" WHERE nom =" + nomNivell);
 
             Nivell n = new Nivell();
-            n.setNom(result.getString(1));
-            n.setNombreCasellesxFila(result.getInt(2));
-            n.setNombreCasellesxColumna(result.getInt(3));
-            n.setNombreMines(result.getInt(4));
+        	n.setNom(result.getString("nom"));
+        	n.setNombreCasellesxFila(result.getInt("nombreCasellesxFila"));
+        	n.setNombreCasellesxColumna(result.getInt("nombreCasellesxColumna"));
+        	n.setNombreMines(result.getInt("nombreMines"));
 
             result.close();
             stmt.close();
