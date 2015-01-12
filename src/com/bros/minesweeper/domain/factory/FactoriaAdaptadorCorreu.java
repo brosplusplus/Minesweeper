@@ -1,6 +1,6 @@
 package com.bros.minesweeper.domain.factory;
 
-import com.bros.minesweeper.domain.adapter.AdaptadorCorreu;
+import com.bros.minesweeper.domain.adapter.AdaptadorCorreuPropi;
 import com.bros.minesweeper.domain.adapter.IAdaptadorCorreu;
 
 public class FactoriaAdaptadorCorreu {
@@ -9,7 +9,7 @@ public class FactoriaAdaptadorCorreu {
 		IAdaptadorCorreu adap = null;
 		switch (tipus){
 			case OWN: 
-				adap = new AdaptadorCorreu();
+				adap = new AdaptadorCorreuPropi();
 				break;
 			default:
 				break;
