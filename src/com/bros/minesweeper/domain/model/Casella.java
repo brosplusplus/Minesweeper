@@ -1,45 +1,50 @@
 package com.bros.minesweeper.domain.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="Casella")
+@Table(name="Casella", uniqueConstraints={
+		@UniqueConstraint(columnNames={"idPartida", "numeroFila","numeroColumna"})
+})
 public class Casella {
-	@EmbeddedId
-	private CasellaID id;
+	@Id
+	@GeneratedValue
+	@Column (name="idCasella")
+	private Integer idCasella;
 	
+	@ManyToOne	
+	@JoinColumn(name="idPartida")
+	private Partida partida;
+	private Integer numeroFila;
+	private Integer numeroColumna;
 	private Integer numero;
 	private Boolean estaDescoberta;
 	private Boolean estaMarcada;
 	private Boolean teMina;
 	
-	public Casella() {
-		id = new CasellaID();
-	}
-	
 	public void setPartida(Partida p)
 	{
-		this.id.partida = p;
+		this.partida = p;
 	}
 	
 	public Integer getNumeroFila() {
-		return id.numeroFila;
+		return numeroFila;
 	}
 	public void setNumeroFila(Integer numeroFila) {
-		this.id.numeroFila = numeroFila;
+		this.numeroFila = numeroFila;
 	}
 	public Integer getNumeroColumna() {
-		return this.id.numeroColumna;
+		return this.numeroColumna;
 	}
 	public void setNumeroColumna(Integer numeroColumna) {
-		this.id.numeroColumna = numeroColumna;
+		this.numeroColumna = numeroColumna;
 	}
 	public Boolean getEstaDescoberta() {
 		return estaDescoberta;
@@ -90,13 +95,5 @@ public class Casella {
 		if (getEstaDescoberta()) throw new Exception("La casella esta descoberta");
 		if (getEstaMarcada()) throw new Exception("La casella esta marcada i no es pot descobrir");
 		setEstaDescoberta(true);
-	}
-	
-	@Embeddable
-	public class CasellaID implements Serializable{
-		@ManyToOne 
-		private Partida partida;
-		private Integer numeroFila;
-		private Integer numeroColumna;
 	}
 }

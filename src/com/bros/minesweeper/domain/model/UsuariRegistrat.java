@@ -19,7 +19,9 @@ public abstract class UsuariRegistrat{
 	private String cognom;
 	@Column(name="pwd")
 	private String pwd;
-	@Id private String username;
+	@Id
+	@Column(name="username")
+	private String username;
 	
 	public String getCognom() {
 		return cognom;
