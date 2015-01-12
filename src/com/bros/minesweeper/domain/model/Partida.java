@@ -206,7 +206,7 @@ public class Partida {
 				c.setTeMina(true);
 				for (int i = 0; i < filesDelNivell; ++i) {
 					for (int j = 0; j <  columnesDelNivell; ++j) {
-						if(0 <= i && i < nRows && 0 <= j && j < nCols){
+						if(0 <= i && i < this.nRows && 0 <= j && j < this.nCols){
 							Casella c2 = getCasella(i, j);
 							if(!c2.tensMina()) c2.incrementaNumero();
 							setCasella(i, j, c2);
@@ -234,12 +234,12 @@ public class Partida {
 
 	
 	private void set(List<Casella> array, int x, int y, Casella casella) {
-		int index = x * nCols + y;
+		int index = x * this.nCols + y;
 		array.set(index, casella);
 	}
 	
 	private Casella get(List<Casella> array, int x, int y) {
-		int index = x * nCols + y;
+		int index = x * this.nCols + y;
 		return array.get(index);
 	}
 	
