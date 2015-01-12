@@ -186,11 +186,23 @@ public class Partida {
 		}
 	}
 	
+	public void colocarMines(){
+		
+	}
+	
+	public void crearCaselles (int F, int C, int nM) {
+		this.casellesPerDescobrir = F*C - nM;
+		inicialitzarCaselles();
+		colocarMines();
+	}
+	
+	
+	
 	public void assignarPuntuacio() {
 		//TODO implement
 	}
 	
-	
+
 	
 	public static void main(String[] args) throws Exception {
 		Partida p = new Partida();
