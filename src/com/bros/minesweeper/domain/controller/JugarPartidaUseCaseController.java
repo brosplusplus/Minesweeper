@@ -42,15 +42,12 @@ public class JugarPartidaUseCaseController {
 	 * @throws Exception 
 	 */
 	public void crearPartida (String nomNivell) {
-		int id = this.partida.getIdPartida();
-		id = id + 1;
-		CtrlNivell cn = FactoriaControladors.getCtrlNivell();
-		String nom = cn.get(nomNivell);
+		int id = this.partida.getIdPartida() + 1;
+		String nivell = CtrlNivell.get(nomNivell).getNom();
 		ArrayList<EstrategiaPuntuacio> estrategies = FactoriaEstrategiaPuntuacio.getAll();
 		int index = new Random().nextInt(estrategies.size());
 		EstrategiaPuntuacio estrategiaEscollida = estrategies.get(index);
-		this.partida = new Partida(id, jugName, nom, estrategiaEscollida);
-		
+		this.partida = new Partida(id, jugName, nivell, estrategiaEscollida);
 	}
 	
 	
