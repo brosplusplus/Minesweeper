@@ -11,7 +11,7 @@ public class CtrlNivell {
 		return null;
 	}
 
-	public String get(String nomNivell) {
+	public static Nivell get(String nomNivell) {
 		// TODO Auto-generated method stub
 		return null;
 	}
