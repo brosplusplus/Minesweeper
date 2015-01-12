@@ -22,6 +22,7 @@ public class CasellaTest {
 		c.setNumeroFila(2);
 		Partida p = new Partida();
 		c.setPartida(p);
+		session.save(p);
 		session.save(c);
 		session.getTransaction().commit();
 		session.close();

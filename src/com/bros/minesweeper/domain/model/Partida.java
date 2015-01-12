@@ -1,10 +1,10 @@
 package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -27,6 +27,9 @@ public class Partida {
 	/**
 	 * Partida own atributes
 	 */
+	@Id
+	@GeneratedValue
+	@Column(name="idPartida")
 	private Integer idPartida;
 	private Boolean estaAcabada;
 	private Boolean estaGuanyada;
@@ -36,13 +39,17 @@ public class Partida {
 	/**
 	 * Association attributes
 	 */
-	@OneToOne (fetch=FetchType.EAGER)
-	@JoinColumn(name="email")
+	
+	@OneToOne
+	@JoinColumn(name="JugadorActual_username")
 	private Jugador jugadorPartidaActual;
 	@ManyToOne
-	@JoinColumn(name="email")
+	@JoinColumn(name="Jugador_username")
 	private Jugador jugadorPartidaJugada;
 	
+	
+	@ManyToOne
+	@JoinColumn(name="nomNivell")
 	private Nivell teNivell;
 	
 	@Transient
@@ -52,12 +59,13 @@ public class Partida {
 	@Transient
 	private Integer puntuacio_tirades;
 	
-	@OneToMany
-	private ArrayList<ArrayList<Casella>> taulell;
+	@OneToMany (targetEntity=Casella.class, mappedBy="idCasella")
+	private List<Casella> taulell;
+	@Transient
+	private Integer nCols; //numero de columnes del taulell
+	@Transient
+	private Integer nRows; //numero de files del taulell
 
-	@Id
-	@GeneratedValue
-	@Column(name="idPartida")
 	public Integer getIdPartida() {
 		return idPartida;
 	}
@@ -114,8 +122,6 @@ public class Partida {
 		this.jugadorPartidaJugada = jugadorPartidaJugada;
 	}
 	
-	@ManyToOne
-	@JoinColumn(name="nomNivell")
 	public Nivell getTeNivell() {
 		return teNivell;
 	}
@@ -124,29 +130,28 @@ public class Partida {
 		this.teNivell = teNivell;
 	}
 	
-	@Transient
+	
 	public EstrategiaPuntuacio getEstrategia() {
 		return estrategia;
 	}
 	
-	@Transient
 	public void setEstrategia(EstrategiaPuntuacio estrategia) {
 		this.estrategia = estrategia;
 	}
 	
-	public ArrayList<ArrayList<Casella>> getTaulell() {
+	public List<Casella> getTaulell() {
 		return taulell;
 	}
 	
-	public void setTaulell(ArrayList<ArrayList<Casella>> taulell) {
+	public void setTaulell(ArrayList<Casella> taulell) {
 		this.taulell = taulell;
 	}
 	
 	private void setCasella(int numF, int numC, Casella c) {
-		this.taulell.get(numF).set(numC, c);
+		set(this.taulell, numF ,numC, c);
 	}
 	private Casella getCasella(int numF, int numC) {
-		return this.taulell.get(numF).get(numC);
+		return get(this.taulell, numF ,numC);
 	}
 	
 	public void marcarCasella(int numF, int numC){
@@ -190,6 +195,17 @@ public class Partida {
 		//TODO implement
 	}
 	
+	
+	
+	private void set(List<Casella> array, int x, int y, Casella casella) {
+		int index = x * nCols + y;
+		array.set(index, casella);
+	}
+	
+	private Casella get(List<Casella> array, int x, int y) {
+		int index = x * nCols + y;
+		return array.get(index);
+	}
 	
 	
 	public static void main(String[] args) {
