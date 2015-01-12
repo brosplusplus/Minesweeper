@@ -176,7 +176,9 @@ public class Partida {
 	
 	public void inicialitzarCaselles( ) {
 		Integer filesDelNivell = this.teNivell.getNombreCasellesxFila();
+		this.nRows = filesDelNivell;
 		Integer columnesDelNivell = this.teNivell.getNombreCasellesxColumna();
+		this.nCols = columnesDelNivell;
 		for (int i = 0; i < filesDelNivell; ++i) {
 			for (int j = 0; j <  columnesDelNivell; ++j) {
 				Casella c = new Casella();
