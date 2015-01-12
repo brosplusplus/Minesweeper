@@ -1,5 +1,6 @@
 package com.bros.minesweeper.domain.controller;
 
+import com.bros.minesweeper.domain.factory.FactoriaControladors;
 import com.bros.minesweeper.domain.model.Partida;
 
 public class JugarPartidaUseCaseController {
@@ -8,6 +9,7 @@ public class JugarPartidaUseCaseController {
 	 * Association attributes
 	 */
 	private Partida partida;
+	private String jugName;
 	
 	public Partida getPartida() {
 		return partida;
@@ -28,15 +30,18 @@ public class JugarPartidaUseCaseController {
 		this.partida.desmarcarCasella(numF, numC);
 	}
 		
-	public void FerAutenticacio(String userN,String passwd) {
-		FactoriaControladors fc = new FactoriaControladors()
+	public void FerAutenticacio(String userN,String passwd) throws Exception {
+		FactoriaControladors fc = new FactoriaControladors();
 		fc = getCtrlJugador();
-		try {
-			
-		}
-		catch (Exception e) {
-			System.out.println(e.getMessage());	
-		}
+		if (!fc.exists(userN)) throw new Exception("L'usuari " + userN + " no es jugador");
+		LoginUseCaseController lucc = new LoginUseCaseController();
+		lucc.login(userN, passwd);
+		this.jugName = userN;
+	}
+
+	private FactoriaControladors getCtrlJugador() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	public void obtenirNivells() {//ArrayList<Nivell> 
