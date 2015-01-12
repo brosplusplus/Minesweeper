@@ -7,18 +7,12 @@ import com.bros.minesweeper.domain.model.UsuariRegistrat;
 public class LoginUseCaseController {
 	
 	public Boolean login (String userN, String passwd) throws Exception {
-		FactoriaControladors fc = new FactoriaControladors();
-		CtrlUsuariRegistrat cu = fc.getCtrlUsuari();
+		CtrlUsuariRegistrat cu = FactoriaControladors.getCtrlUsuari();
 		UsuariRegistrat u = cu.get(userN);
 
 		if(passwd != u.getPwd()) throw new Exception("Password Incorrecta");
 
 		return true;
-	}
-
-	public void login(String userN, String passwd) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
