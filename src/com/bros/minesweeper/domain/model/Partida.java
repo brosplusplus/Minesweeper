@@ -2,7 +2,7 @@ package com.bros.minesweeper.domain.model;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Random;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -178,7 +178,7 @@ public class Partida {
 		Integer filesDelNivell = this.teNivell.getNombreCasellesxFila();
 		Integer columnesDelNivell = this.teNivell.getNombreCasellesxColumna();
 		for (int i = 0; i < filesDelNivell; ++i) {
-			for (int j = 0; j <  columnesDelNivell; ++i) {
+			for (int j = 0; j <  columnesDelNivell; ++j) {
 				Casella c = new Casella();
 				c.setNumeroFila(i);
 				c.setNumeroColumna(j);
@@ -196,7 +196,24 @@ public class Partida {
 		Integer columnesDelNivell = this.teNivell.getNombreCasellesxColumna();
 		Integer numMinesDelNivell = this.teNivell.getNombreMines();
 		while(numMinesDelNivell > 0){
-			
+			Random rand = new Random();
+			Integer x = rand.nextInt(filesDelNivell);
+			Integer y = rand.nextInt(columnesDelNivell);
+			Casella c = getCasella(x, y);
+			if(!c.getTeMina()){
+				c.setTeMina(true);
+				for (int i = 0; i < filesDelNivell; ++i) {
+					for (int j = 0; j <  columnesDelNivell; ++j) {
+						if(0 <= i && i < nRows && 0 <= j && j < nCols){
+							Casella c2 = getCasella(i, j);
+							if(!c2.tensMina()) c2.incrementaNumero();
+							setCasella(i, j, c2);
+						}
+					}
+				}
+				--numMinesDelNivell;
+				setCasella(x, y, c);
+			}			
 		}
 	}
 	
