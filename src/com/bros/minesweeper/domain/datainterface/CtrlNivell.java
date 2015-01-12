@@ -7,31 +7,20 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import com.bros.minesweeper.DB.ConnexioDB;
 import com.bros.minesweeper.domain.model.Nivell;
 
 public class CtrlNivell {
 	
-    private static String dbURL = "jdbc:derby://localhost:1527/HibernateDB;create=true";
     private static String tableName = "Nivell";
     // jdbc Connection
     private static Connection conn = null;
     private static Statement stmt = null;
-
-    private static void createConnection() {
-        try {
-            Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
-            //Get a connection
-            conn = DriverManager.getConnection(dbURL); 
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
     
 	public ArrayList<Nivell> getAll() throws SQLException {
 		// TODO Auto-generated method stub
 		try {
-			createConnection();
+			ConnexioDB.createConnection();
             stmt = conn.createStatement();
             ResultSet results = stmt.executeQuery("SELECT * FROM " + tableName);
             ArrayList<Nivell> nivells = new ArrayList<Nivell>();
@@ -57,7 +46,7 @@ public class CtrlNivell {
 	public static Nivell get(String nomNivell) {
 		// TODO Auto-generated method stub
 		try {
-			createConnection();
+			ConnexioDB.createConnection();
             stmt = conn.createStatement();
             ResultSet result = stmt.executeQuery("SELECT * FROM " + tableName +" WHERE nom =" + nomNivell);
 
