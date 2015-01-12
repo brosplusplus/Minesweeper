@@ -16,4 +16,9 @@ public class LoginUseCaseController {
 		return true;
 	}
 
+	public void login(String userN, String passwd) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
